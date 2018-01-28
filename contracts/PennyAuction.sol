@@ -10,7 +10,8 @@ contract PennyAuction {
 
   Bid[] bids;
   uint interval = 60;
-  uint profit = 1000;
+  uint step = 1;
+  uint minBid = 1000000000000000000;
 
   event LogBidMade(address accountAddress, uint amount, uint time);
   event LogBidFailed(address accountAddress, uint amount, uint time);
@@ -22,22 +23,21 @@ contract PennyAuction {
       uint lastBidAmount = getLastBidAmount();
       address sender = msg.sender;
       uint time = now;
-      if (amount <= lastBidAmount) {
-        LogBidFailed(sender, amount, time);
-        sender.transfer(amount);
-        LogBidReturned(sender, amount, time);
-        return false;
-      }
+      require(amount > minBid);
+      require(amount > (lastBidAmount + step));
       Bid memory submitted_bid = Bid({time: now, sender: sender, amount: amount});
       bids.push(submitted_bid);
       LogBidMade(sender, amount, time);
-      if (isBidFinal()) {
-        sender.transfer(this.balance);
-        LogBidFinal(sender, amount, time, profit);
-        delete bids;
-        return true;
-      }
-      else return true;
+      if (isBidFinal()) payout(sender, amount, time);
+      return true;
+  }
+
+  function payout(address sender, uint amount, uint time) private returns (uint payout) {
+    uint balance = this.balance;
+    sender.transfer(balance);
+    LogBidFinal(sender, amount, time, this.balance);
+    delete bids;
+    return balance;
   }
 
   function getLastBidAmount() constant public returns (uint lastBidAmount) {
@@ -61,6 +61,10 @@ contract PennyAuction {
   function getTimeOfLastBid() constant public returns (uint time) {
     if (bids.length == 0) return now;
     return bids[bids.length-1].time;
+  }
+
+  function getMinBid() constant public returns (uint minBid) {
+    return minBid;
   }
 
   function () public payable {
