@@ -1,6 +1,6 @@
 pragma solidity ^0.4.17;
 
-contract PennyAuction {
+contract DollarAuction {
 
   struct Bid {
     address sender;

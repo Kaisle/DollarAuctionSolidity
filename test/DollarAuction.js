@@ -1,9 +1,9 @@
-var PennyAuction = artifacts.require("./PennyAuction.sol");
+var PennyAuction = artifacts.require("./DollarAuction.sol");
 var minBid = 2000000000000000000;
 var gas = 1200000;
 var interval = 60000;
 
-contract('PennyAuction', function(accounts) {
+contract('DollarAuction', function(accounts) {
   it("starting bid amount should be 0", function() {
     return PennyAuction.deployed().then(function(instance) {
       return instance.getTotalBidded.call();
