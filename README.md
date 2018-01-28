@@ -6,7 +6,7 @@
 
 1. Player 1 places his bid
 2. Player 2 places his bid (has to match the previous bid)
-3. If no other player places a bid within the next 10 minutes, Player 2 receives the full reward
+3. If no other player places a bid within the next minute, Player 2 receives the full reward
 4. If Player 1 (or some other player) places a matching bid, the timer is reset
 5. Players keep bidding until the timer runs out
 6. Game Theory and the Sunk Cost Fallacy dictates that the timer will never run out and the pool of bids will grow infinitely large until all money has been spent
@@ -31,3 +31,8 @@
 ### Testing ###
 
 1. Run `truffle test` in root
+
+### Default parameters ###
+
+1. Timer interval = 60 seconds
+2. Minimum bid = 1 ETH
