@@ -1,4 +1,4 @@
-#A simple dollar auction#
+# A simple dollar auction #
 
 ## Implemented in Solidity using Truffle. ##   
 
