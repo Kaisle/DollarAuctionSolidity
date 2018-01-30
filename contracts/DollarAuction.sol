@@ -12,6 +12,7 @@ contract DollarAuction {
   uint interval = 60;
   uint step = 1;
   uint minBid = 1000000000000000000;
+  uint[3] myArr;
 
   event LogBidMade(address accountAddress, uint amount, uint time);
   event LogBidFailed(address accountAddress, uint amount, uint time);
@@ -63,8 +64,15 @@ contract DollarAuction {
     return bids[bids.length-1].time;
   }
 
-  function getMinBid() constant public returns (uint minBid) {
+  function getMinBid() constant public returns (uint bid) {
     return minBid;
+  }
+
+  function getArray() constant public returns (uint256[3] array) {
+    myArr[0] = 1;
+    myArr[1] = 2;
+    myArr[2] = 3;
+    return myArr;
   }
 
   function () public payable {
