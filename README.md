@@ -16,7 +16,7 @@
 
 ### Live contract ###
 
-Ropsten: https://ropsten.etherscan.io/address/0x60d772Fa8E8B98c50Bb370892B0696f12beD83d5
+Ropsten Test Network: https://ropsten.etherscan.io/address/0x60d772Fa8E8B98c50Bb370892B0696f12beD83d5 
 
 ### Installation: ###
 
