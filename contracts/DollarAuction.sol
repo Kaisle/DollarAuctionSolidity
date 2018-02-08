@@ -9,70 +9,70 @@ contract DollarAuction {
   }
 
   Bid[] bids;
+  uint bidsPtr = 0;
   uint interval = 60;
   uint step = 1;
-  uint minBid = 1000000000000000000;
-  uint[3] myArr;
+  uint minBid = 10000000000000000;
+  uint total = 0;
 
   event LogBidMade(address accountAddress, uint amount, uint time);
   event LogBidFailed(address accountAddress, uint amount, uint time);
   event LogBidFinal(address accountAddress, uint amount, uint time, uint profit);
   event LogBidReturned(address accountAddress, uint amount, uint time);
+  event LogPayoutFailed(address accountAddress, uint amount, uint time);
+  event BidSaved(Bid bid);
+
+  function DollarAuction() {
+    bids.length = 100000;
+  }
 
   function bid() public payable returns (bool success) {
+      //if (bidsPtr == bids.length -1) bids.length = bids.length + 100;
       uint amount = msg.value;
       uint lastBidAmount = getLastBidAmount();
       address sender = msg.sender;
       uint time = now;
       require(amount > minBid);
       require(amount > (lastBidAmount + step));
-      Bid memory submitted_bid = Bid({time: now, sender: sender, amount: amount});
-      bids.push(submitted_bid);
+      bids[bidsPtr] = Bid({time: now, sender: sender, amount: amount});
+      bidsPtr = bidsPtr + 1;
+      total = total + amount;
       LogBidMade(sender, amount, time);
-      if (isBidFinal()) payout(sender, amount, time);
+      if (isBidFinal()) {
+        uint payout = total;
+        total = 0;
+        if (!sender.send(payout)) {
+          total = payout;
+          LogPayoutFailed(sender, amount, time);
+          return false;
+        }
+        bidsPtr = 0;
+        LogBidFinal(sender, amount, time, total);
+      }
       return true;
   }
 
-  function payout(address sender, uint amount, uint time) private returns (uint payout) {
-    uint balance = this.balance;
-    sender.transfer(balance);
-    LogBidFinal(sender, amount, time, this.balance);
-    delete bids;
-    return balance;
-  }
-
   function getLastBidAmount() constant public returns (uint lastBidAmount) {
-    if (bids.length == 0) return 0;
-    else return bids[bids.length-1].amount;
+    if (bidsPtr == 0) return 0;
+    else return bids[bidsPtr-1].amount;
   }
 
   function getTotalBidded() constant public returns (uint totalBidded) {
-    uint total = 0;
-    for (uint i = 0; i < bids.length; i++) {
-      total += bids[i].amount;
-    }
     return total;
   }
 
   function isBidFinal() constant public returns (bool isFinal) {
-    if (bids.length <= 1) return false;
-    return ((bids[bids.length-1].time - bids[bids.length-2].time) > interval);
+    if (bidsPtr <= 1) return false;
+    return ((bids[bidsPtr-1].time - bids[bidsPtr-2].time) > interval);
   }
 
   function getTimeOfLastBid() constant public returns (uint time) {
-    if (bids.length == 0) return now;
-    return bids[bids.length-1].time;
+    if (bidsPtr == 0) return now;
+    return bids[bidsPtr-1].time;
   }
 
-  function getMinBid() constant public returns (uint bid) {
+  function getMinBid() constant public returns (uint minimumBid) {
     return minBid;
-  }
-
-  function getArray() constant public returns (uint256[3] array) {
-    myArr[0] = 1;
-    myArr[1] = 2;
-    myArr[2] = 3;
-    return myArr;
   }
 
   function () public payable {
