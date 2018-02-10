@@ -21,25 +21,27 @@ Ropsten Test Network: https://ropsten.etherscan.io/address/0x60d772Fa8E8B98c50Bb
 ### Installation: ###
 
 1. Clone: `git clone https://github.com/Kaisle/DollarAuctionSolidity && cd DollarAuctionSolidity`
-2. Install node: `sudo apt-get install nodejs`
-3. Install npm: `sudo apt-get install npm`
-4. Install Trufle: `sudo npm install -g truffle`
-5. Install Truffle HD Wallet: `sudo npm install truffle-hdwallet-provider --unsafe-perm=true --allow-root`
-6. Install Truffle Contract: `sudo npm install truffle-contract --unsafe-perm=true --allow-root`
-7. Install Web3 JS: `sudo npm install web3 --unsafe-perm=true --allow-root`
-8. Install Ganache: `sudo npm install -g ganache-cli`
-9. Set up a local blockchain: `ganache-cli`
+2. `npm install`
+3. Set up a local blockchain: `ganache-cli`
  
 ### Running: ###
 
 1. Run `sudo truffle migrate --reset` in root
+
+You might need to configure truffle.js to point to your local blockchain:
+
+`  development: {
+       host: "localhost", // IP here
+       port: 7545, // Port number here
+       network_id: "*" // Match any network id
+     },`
 
 You can now interact with the smart contract on your local blockchain.
 
 ### Using TruffleContract to make calls in JS: ###
 
 1. Run `node interact.js` in root
-2. Modify the code in `interact.js` to make your own calls
+2. Modify the code in `interact.js` to make your own calls using the Web3 and Truffle-Contract API's. 
 
 ### Testing ###
 
