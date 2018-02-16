@@ -2,90 +2,6 @@
   "contractName": "DollarAuction",
   "abi": [
     {
-      "constant": false,
-      "inputs": [],
-      "name": "bid",
-      "outputs": [
-        {
-          "name": "success",
-          "type": "bool"
-        }
-      ],
-      "payable": true,
-      "stateMutability": "payable",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "getTimeOfLastBid",
-      "outputs": [
-        {
-          "name": "time",
-          "type": "uint256"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "getTotalBidded",
-      "outputs": [
-        {
-          "name": "totalBidded",
-          "type": "uint256"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "getMinBid",
-      "outputs": [
-        {
-          "name": "minimumBid",
-          "type": "uint256"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "getLastBidAmount",
-      "outputs": [
-        {
-          "name": "lastBidAmount",
-          "type": "uint256"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "isBidFinal",
-      "outputs": [
-        {
-          "name": "isFinal",
-          "type": "bool"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
       "inputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
@@ -236,17 +152,101 @@
       ],
       "name": "BidSaved",
       "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "bid",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getLastBidAmount",
+      "outputs": [
+        {
+          "name": "lastBidAmount",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getTotalBidded",
+      "outputs": [
+        {
+          "name": "totalBidded",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isBidFinal",
+      "outputs": [
+        {
+          "name": "isFinal",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getTimeOfLastBid",
+      "outputs": [
+        {
+          "name": "time",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getMinBid",
+      "outputs": [
+        {
+          "name": "minimumBid",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
     }
   ],
-  "bytecode": "0x60606040526000600155603c6002556001600355662386f26fc100006004556000600555341561002e57600080fd5b620186a060008161003f9190610045565b506100cd565b815481835581811511610072576003028160030283600052602060002091820191016100719190610077565b5b505050565b6100ca91905b808211156100c657600080820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff0219169055600182016000905560028201600090555060030161007d565b5090565b90565b61057c806100dc6000396000f300606060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631998aeef1461007d57806324f073ad1461009f578063288dd331146100c85780638cb39385146100f1578063a283c9c51461011a578063ee7c178614610143575b600080fd5b610085610170565b604051808215151515815260200191505060405180910390f35b34156100aa57600080fd5b6100b2610451565b6040518082815260200191505060405180910390f35b34156100d357600080fd5b6100db610490565b6040518082815260200191505060405180910390f35b34156100fc57600080fd5b61010461049a565b6040518082815260200191505060405180910390f35b341561012557600080fd5b61012d6104a4565b6040518082815260200191505060405180910390f35b341561014e57600080fd5b6101566104e4565b604051808215151515815260200191505060405180910390f35b6000806000806000803494506101846104a4565b93503392504291506004548511151561019c57600080fd5b6003548401851115156101ae57600080fd5b6060604051908101604052808473ffffffffffffffffffffffffffffffffffffffff1681526020018681526020014281525060006001548154811015156101f157fe5b906000526020600020906003020160008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506020820151816001015560408201518160020155905050600180540160018190555084600554016005819055507f2910f1595943b843bea5ba03a84c2f17f57ad59fbf676336dd22c9cc17bacae2838684604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828152602001935050505060405180910390a16102ee6104e4565b1561044457600554905060006005819055508273ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f1935050505015156103be57806005819055507f427c9aca73da774641271012c0dacbce66b29db72bbaa9f074ff9df5d77e7711838684604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828152602001935050505060405180910390a160009550610449565b60006001819055507ff9fafb59f776e1d72234f8e07f9c3586cf72cd6078c50b636dae414922d3752c838684600554604051808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200184815260200183815260200182815260200194505050505060405180910390a15b600195505b505050505090565b60008060015414156104655742905061048d565b6000600180540381548110151561047857fe5b90600052602060002090600302016002015490505b90565b6000600554905090565b6000600454905090565b60008060015414156104b957600090506104e1565b600060018054038154811015156104cc57fe5b90600052602060002090600302016001015490505b90565b6000600180541115156104fa576000905061054d565b600254600060026001540381548110151561051157fe5b9060005260206000209060030201600201546000600180540381548110151561053657fe5b906000526020600020906003020160020154031190505b905600a165627a7a7230582091feb5552d76ab8d938e724026fb4f4eb75111c16f023985ec207a2f81d0f3620029",
-  "deployedBytecode": "0x606060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631998aeef1461007d57806324f073ad1461009f578063288dd331146100c85780638cb39385146100f1578063a283c9c51461011a578063ee7c178614610143575b600080fd5b610085610170565b604051808215151515815260200191505060405180910390f35b34156100aa57600080fd5b6100b2610451565b6040518082815260200191505060405180910390f35b34156100d357600080fd5b6100db610490565b6040518082815260200191505060405180910390f35b34156100fc57600080fd5b61010461049a565b6040518082815260200191505060405180910390f35b341561012557600080fd5b61012d6104a4565b6040518082815260200191505060405180910390f35b341561014e57600080fd5b6101566104e4565b604051808215151515815260200191505060405180910390f35b6000806000806000803494506101846104a4565b93503392504291506004548511151561019c57600080fd5b6003548401851115156101ae57600080fd5b6060604051908101604052808473ffffffffffffffffffffffffffffffffffffffff1681526020018681526020014281525060006001548154811015156101f157fe5b906000526020600020906003020160008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506020820151816001015560408201518160020155905050600180540160018190555084600554016005819055507f2910f1595943b843bea5ba03a84c2f17f57ad59fbf676336dd22c9cc17bacae2838684604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828152602001935050505060405180910390a16102ee6104e4565b1561044457600554905060006005819055508273ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f1935050505015156103be57806005819055507f427c9aca73da774641271012c0dacbce66b29db72bbaa9f074ff9df5d77e7711838684604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828152602001935050505060405180910390a160009550610449565b60006001819055507ff9fafb59f776e1d72234f8e07f9c3586cf72cd6078c50b636dae414922d3752c838684600554604051808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200184815260200183815260200182815260200194505050505060405180910390a15b600195505b505050505090565b60008060015414156104655742905061048d565b6000600180540381548110151561047857fe5b90600052602060002090600302016002015490505b90565b6000600554905090565b6000600454905090565b60008060015414156104b957600090506104e1565b600060018054038154811015156104cc57fe5b90600052602060002090600302016001015490505b90565b6000600180541115156104fa576000905061054d565b600254600060026001540381548110151561051157fe5b9060005260206000209060030201600201546000600180540381548110151561053657fe5b906000526020600020906003020160020154031190505b905600a165627a7a7230582091feb5552d76ab8d938e724026fb4f4eb75111c16f023985ec207a2f81d0f3620029",
+  "bytecode": "0x60606040526000600155603c6002556001600355662386f26fc100006004556000600555341561002e57600080fd5b620186a060008161003f9190610045565b506100cd565b815481835581811511610072576003028160030283600052602060002091820191016100719190610077565b5b505050565b6100ca91905b808211156100c657600080820160006101000a81549073ffffffffffffffffffffffffffffffffffffffff0219169055600182016000905560028201600090555060030161007d565b5090565b90565b61057c806100dc6000396000f300606060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631998aeef1461007d57806324f073ad1461009f578063288dd331146100c85780638cb39385146100f1578063a283c9c51461011a578063ee7c178614610143575b600080fd5b610085610170565b604051808215151515815260200191505060405180910390f35b34156100aa57600080fd5b6100b2610451565b6040518082815260200191505060405180910390f35b34156100d357600080fd5b6100db610490565b6040518082815260200191505060405180910390f35b34156100fc57600080fd5b61010461049a565b6040518082815260200191505060405180910390f35b341561012557600080fd5b61012d6104a4565b6040518082815260200191505060405180910390f35b341561014e57600080fd5b6101566104e4565b604051808215151515815260200191505060405180910390f35b6000806000806000803494506101846104a4565b93503392504291506004548511151561019c57600080fd5b6003548401851115156101ae57600080fd5b6060604051908101604052808473ffffffffffffffffffffffffffffffffffffffff1681526020018681526020014281525060006001548154811015156101f157fe5b906000526020600020906003020160008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506020820151816001015560408201518160020155905050600180540160018190555084600554016005819055507f2910f1595943b843bea5ba03a84c2f17f57ad59fbf676336dd22c9cc17bacae2838684604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828152602001935050505060405180910390a16102ee6104e4565b1561044457600554905060006005819055508273ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f1935050505015156103be57806005819055507f427c9aca73da774641271012c0dacbce66b29db72bbaa9f074ff9df5d77e7711838684604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828152602001935050505060405180910390a160009550610449565b60006001819055507ff9fafb59f776e1d72234f8e07f9c3586cf72cd6078c50b636dae414922d3752c838684600554604051808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200184815260200183815260200182815260200194505050505060405180910390a15b600195505b505050505090565b60008060015414156104655742905061048d565b6000600180540381548110151561047857fe5b90600052602060002090600302016002015490505b90565b6000600554905090565b6000600454905090565b60008060015414156104b957600090506104e1565b600060018054038154811015156104cc57fe5b90600052602060002090600302016001015490505b90565b6000600180541115156104fa576000905061054d565b600254600060026001540381548110151561051157fe5b9060005260206000209060030201600201546000600180540381548110151561053657fe5b906000526020600020906003020160020154031190505b905600a165627a7a723058208e8968fcd0dfb5d921a7745e51595d55d15ee6e649b7c1eed689631841ac2a570029",
+  "deployedBytecode": "0x606060405260043610610078576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680631998aeef1461007d57806324f073ad1461009f578063288dd331146100c85780638cb39385146100f1578063a283c9c51461011a578063ee7c178614610143575b600080fd5b610085610170565b604051808215151515815260200191505060405180910390f35b34156100aa57600080fd5b6100b2610451565b6040518082815260200191505060405180910390f35b34156100d357600080fd5b6100db610490565b6040518082815260200191505060405180910390f35b34156100fc57600080fd5b61010461049a565b6040518082815260200191505060405180910390f35b341561012557600080fd5b61012d6104a4565b6040518082815260200191505060405180910390f35b341561014e57600080fd5b6101566104e4565b604051808215151515815260200191505060405180910390f35b6000806000806000803494506101846104a4565b93503392504291506004548511151561019c57600080fd5b6003548401851115156101ae57600080fd5b6060604051908101604052808473ffffffffffffffffffffffffffffffffffffffff1681526020018681526020014281525060006001548154811015156101f157fe5b906000526020600020906003020160008201518160000160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506020820151816001015560408201518160020155905050600180540160018190555084600554016005819055507f2910f1595943b843bea5ba03a84c2f17f57ad59fbf676336dd22c9cc17bacae2838684604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828152602001935050505060405180910390a16102ee6104e4565b1561044457600554905060006005819055508273ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f1935050505015156103be57806005819055507f427c9aca73da774641271012c0dacbce66b29db72bbaa9f074ff9df5d77e7711838684604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828152602001935050505060405180910390a160009550610449565b60006001819055507ff9fafb59f776e1d72234f8e07f9c3586cf72cd6078c50b636dae414922d3752c838684600554604051808573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200184815260200183815260200182815260200194505050505060405180910390a15b600195505b505050505090565b60008060015414156104655742905061048d565b6000600180540381548110151561047857fe5b90600052602060002090600302016002015490505b90565b6000600554905090565b6000600454905090565b60008060015414156104b957600090506104e1565b600060018054038154811015156104cc57fe5b90600052602060002090600302016001015490505b90565b6000600180541115156104fa576000905061054d565b600254600060026001540381548110151561051157fe5b9060005260206000209060030201600201546000600180540381548110151561053657fe5b906000526020600020906003020160020154031190505b905600a165627a7a723058208e8968fcd0dfb5d921a7745e51595d55d15ee6e649b7c1eed689631841ac2a570029",
   "sourceMap": "26:2225:0:-;;;155:1;140:16;;176:2;160:18;;194:1;182:13;;213:17;199:31;;247:1;234:14;;646:56;;;;;;;;691:6;677:4;:20;;;;;:::i;:::-;;26:2225;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
   "deployedSourceMap": "26:2225:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2235:8;;;706:834;;;;;;;;;;;;;;;;;;;;;;;;;;;1971:136;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1698:92;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2111:87;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1544:150;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1794:173;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;706:834;745:12;839:11;870:18;917:14;952:9;1254:11;853:9;839:23;;891:18;:16;:18::i;:::-;870:39;;934:10;917:27;;964:3;952:15;;992:6;;983;:15;975:24;;;;;;;;1041:4;;1025:13;:20;1015:6;:31;1007:40;;;;;;;;1071:48;;;;;;;;;1095:6;1071:48;;;;;;1111:6;1071:48;;;;1082:3;1071:48;;;1055:4;1060:7;;1055:13;;;;;;;;;;;;;;;;;;;;:64;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1147:1;1137:7;;:11;1127:7;:21;;;;1172:6;1164:5;;:14;1156:5;:22;;;;1186:32;1197:6;1205;1213:4;1186:32;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1230:12;:10;:12::i;:::-;1226:291;;;1268:5;;1254:19;;1291:1;1283:5;:9;;;;1307:6;:11;;:19;1319:6;1307:19;;;;;;;;;;;;;;;;;;;;;;;1306:20;1302:136;;;1348:6;1340:5;:14;;;;1366:37;1382:6;1390;1398:4;1366:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1422:5;1415:12;;;;1302:136;1457:1;1447:7;:11;;;;1468:40;1480:6;1488;1496:4;1502:5;;1468:40;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1226:291;1531:4;1524:11;;706:834;;;;;;;:::o;1971:136::-;2024:9;2056:1;2045:7;;:12;2041:28;;;2066:3;2059:10;;;;2041:28;2082:4;2095:1;2087:7;;:9;2082:15;;;;;;;;;;;;;;;;;;;;:20;;;2075:27;;1971:136;;:::o;1698:92::-;1749:16;1780:5;;1773:12;;1698:92;:::o;2111:87::-;2157:15;2187:6;;2180:13;;2111:87;:::o;1544:150::-;1597:18;1638:1;1627:7;;:12;1623:66;;;1648:1;1641:8;;;;1623:66;1667:4;1680:1;1672:7;;:9;1667:15;;;;;;;;;;;;;;;;;;;;:22;;;1660:29;;1544:150;;:::o;1794:173::-;1841:12;1876:1;1865:7;;:12;;1861:30;;;1886:5;1879:12;;;;1861:30;1953:8;;1929:4;1942:1;1934:7;;:9;1929:15;;;;;;;;;;;;;;;;;;;;:20;;;1906:4;1919:1;1911:7;;:9;1906:15;;;;;;;;;;;;;;;;;;;;:20;;;:43;1905:56;1897:65;;1794:173;;:::o",
   "source": "pragma solidity ^0.4.17;\n\ncontract DollarAuction {\n\n  struct Bid {\n    address sender;\n    uint amount;\n    uint time;\n  }\n\n  Bid[] bids;\n  uint bidsPtr = 0;\n  uint interval = 60;\n  uint step = 1;\n  uint minBid = 10000000000000000;\n  uint total = 0;\n\n  event LogBidMade(address accountAddress, uint amount, uint time);\n  event LogBidFailed(address accountAddress, uint amount, uint time);\n  event LogBidFinal(address accountAddress, uint amount, uint time, uint profit);\n  event LogBidReturned(address accountAddress, uint amount, uint time);\n  event LogPayoutFailed(address accountAddress, uint amount, uint time);\n  event BidSaved(Bid bid);\n\n  function DollarAuction() {\n    bids.length = 100000;\n  }\n\n  function bid() public payable returns (bool success) {\n      //if (bidsPtr == bids.length -1) bids.length = bids.length + 100;\n      uint amount = msg.value;\n      uint lastBidAmount = getLastBidAmount();\n      address sender = msg.sender;\n      uint time = now;\n      require(amount > minBid);\n      require(amount > (lastBidAmount + step));\n      bids[bidsPtr] = Bid({time: now, sender: sender, amount: amount});\n      bidsPtr = bidsPtr + 1;\n      total = total + amount;\n      LogBidMade(sender, amount, time);\n      if (isBidFinal()) {\n        uint payout = total;\n        total = 0;\n        if (!sender.send(payout)) {\n          total = payout;\n          LogPayoutFailed(sender, amount, time);\n          return false;\n        }\n        bidsPtr = 0;\n        LogBidFinal(sender, amount, time, total);\n      }\n      return true;\n  }\n\n  function getLastBidAmount() constant public returns (uint lastBidAmount) {\n    if (bidsPtr == 0) return 0;\n    else return bids[bidsPtr-1].amount;\n  }\n\n  function getTotalBidded() constant public returns (uint totalBidded) {\n    return total;\n  }\n\n  function isBidFinal() constant public returns (bool isFinal) {\n    if (bidsPtr <= 1) return false;\n    return ((bids[bidsPtr-1].time - bids[bidsPtr-2].time) > interval);\n  }\n\n  function getTimeOfLastBid() constant public returns (uint time) {\n    if (bidsPtr == 0) return now;\n    return bids[bidsPtr-1].time;\n  }\n\n  function getMinBid() constant public returns (uint minimumBid) {\n    return minBid;\n  }\n\n  function () public payable {\n    revert();\n  }\n\n}\n",
-  "sourcePath": "/home/anders/DollarAuction/contracts/DollarAuction.sol",
+  "sourcePath": "/home/andy/DollarAuctionSolidity/contracts/DollarAuction.sol",
   "ast": {
     "attributes": {
-      "absolutePath": "/home/anders/DollarAuction/contracts/DollarAuction.sol",
+      "absolutePath": "/home/andy/DollarAuctionSolidity/contracts/DollarAuction.sol",
       "exportedSymbols": {
         "DollarAuction": [
           286
@@ -1428,7 +1428,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 298,
+                              "referencedDeclaration": 533,
                               "type": "msg",
                               "value": "msg"
                             },
@@ -1574,7 +1574,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 298,
+                              "referencedDeclaration": 533,
                               "type": "msg",
                               "value": "msg"
                             },
@@ -1631,7 +1631,7 @@
                           "overloadedDeclarations": [
                             null
                           ],
-                          "referencedDeclaration": 300,
+                          "referencedDeclaration": 535,
                           "type": "uint256",
                           "value": "now"
                         },
@@ -1672,7 +1672,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 301,
+                              "referencedDeclaration": 536,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -1766,7 +1766,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 301,
+                              "referencedDeclaration": 536,
                               "type": "function (bool) pure",
                               "value": "require"
                             },
@@ -1975,7 +1975,7 @@
                                   "overloadedDeclarations": [
                                     null
                                   ],
-                                  "referencedDeclaration": 300,
+                                  "referencedDeclaration": 535,
                                   "type": "uint256",
                                   "value": "now"
                                 },
@@ -3879,7 +3879,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 300,
+                              "referencedDeclaration": 535,
                               "type": "uint256",
                               "value": "now"
                             },
@@ -4178,7 +4178,7 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 302,
+                              "referencedDeclaration": 537,
                               "type": "function () pure",
                               "value": "revert"
                             },
@@ -4218,7 +4218,7 @@
   },
   "compiler": {
     "name": "solc",
-    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
   },
   "networks": {
     "3": {
@@ -4233,5 +4233,5 @@
     }
   },
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-02-07T01:57:52.143Z"
+  "updatedAt": "2018-02-16T08:46:21.221Z"
 }

@@ -1,0 +1,31 @@
+{
+  "name": "dollarauctionsolidity",
+  "version": "1.0.0",
+  "description": "## Implemented in Solidity using Truffle. ##",
+  "main": "interact.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "bignumber": "^1.1.0",
+    "ganache-cli": "^6.0.3",
+    "truffle": "^4.0.6",
+    "truffle-contract": "^3.0.3",
+    "truffle-hdwallet-provider": "0.0.3",
+    "web3": "^1.0.0-beta2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kaisle/DollarAuctionSolidity.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kaisle/DollarAuctionSolidity/issues"
+  },
+  "homepage": "https://github.com/Kaisle/DollarAuctionSolidity#readme"
+}
